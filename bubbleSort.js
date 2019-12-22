@@ -23,19 +23,25 @@ bubbleSort(numbers)
 
 // recursive version
 let bubbleSort = (arr, n) => {
-  if (n === 1) {
+  // create exit condition
+  if (n <= 1) {
     return arr
   }
 
+  // looping the array
   arr.forEach((current, i) => {
+    // if the current value is greater than ( > ) the next value, do this
     if (current > arr[i + 1]) {
+      // save the current value
       const temp = current
 
+      // swap the position with the next value
       arr[i] = arr[i + 1]
       arr[i + 1] = temp
     }
   })
 
+  // call the function until it meet the exit condition
   return bubbleSort(arr, n - 1)
 }
 
